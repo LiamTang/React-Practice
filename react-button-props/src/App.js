@@ -8,8 +8,9 @@ function App() {
     <main>
       <div>
         <Button> Default Button </Button>
-        <Button color="red"> Red Button </Button>
-        <Button color="black"> Black Button </Button>
+        <Button color="primary"> Red Button </Button>
+        <Button color="secondary"> Black Button </Button>
+        <Button color="disabled"> Black Button </Button>
       </div>
     </main>
   );

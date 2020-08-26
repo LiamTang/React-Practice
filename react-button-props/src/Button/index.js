@@ -6,8 +6,9 @@ export default function Button({ children, color }) {
   return (
     <button
       className={classNames(styles.button, {
-        [styles.red]: color === 'red',
-        [styles.black]: color === 'black',
+        [styles.primary]: color === 'primary',
+        [styles.secondary]: color === 'secondary',
+        [styles.disabled]: color === 'disabled',
       })}
     >
       {children}
