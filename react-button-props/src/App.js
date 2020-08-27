@@ -1,17 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Button from './Button';
+import Contained from './container/Button/Contained';
+import Outlined from './container/Button/Outlined';
+import Size from './container/Button/Size';
 
 function App() {
   return (
     <main>
-      <div>
-        <Button> Default Button </Button>
-        <Button color="primary"> Red Button </Button>
-        <Button color="secondary"> Black Button </Button>
-        <Button color="disabled"> Black Button </Button>
-      </div>
+      <Contained />
+      <Outlined />
+      <Size />
     </main>
   );
 }
