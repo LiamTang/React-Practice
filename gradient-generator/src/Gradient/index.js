@@ -3,11 +3,12 @@ import styles from './styles.module.css';
 
 export default function Gradient() {
   //default color
-  const [color1, setColor1] = useState('#00f260');
-  const [color2, setColor2] = useState('#0575e6');
+  const [color1, setColor1] = useState('#6ad294');
+  const [color2, setColor2] = useState('#8675e6');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    console.log(e);
     if (name === 'color1') {
       setColor1(value);
     }
@@ -17,37 +18,50 @@ export default function Gradient() {
   };
 
   const handleDefault = () => {
-    setColor1('#00f260');
-    setColor2('#0575e6');
+    setColor1('#6ad294');
+    setColor2('#8675e6');
   };
   return (
-    <div
-      className={styles.container}
-      style={{ background: `linear-gradient(75deg, ${color1}, ${color2})` }}
-    >
-      <div className={styles.inputGroup}>
-        <label>Please Select the First Color</label>
-        <input
-          type="color"
-          name="color1"
-          className={styles.inputColor}
-          value={color1}
-          onChange={handleInputChange}
-        />
+    <div className={styles.container}>
+      <h2>CSS Gradient</h2>
+      <div
+        className={styles.display}
+        style={{ background: `linear-gradient(75deg, ${color1}, ${color2})` }}
+      ></div>
+      <div className={styles.wrap}>
+        <div className={styles.inputGroup}>
+          <label>Color One</label>
+          <input
+            type="color"
+            name="color1"
+            className={styles.inputColor}
+            value={color1}
+            onChange={handleInputChange}
+          />
+          <span>{color1}</span>
+        </div>
+        <div className={styles.inputGroup}>
+          <label>Color Two</label>
+          <input
+            type="color"
+            name="color2"
+            className={styles.inputColor}
+            value={color2}
+            onChange={handleInputChange}
+          />
+          <span>{color2}</span>
+        </div>
+        <button className={styles.button} onClick={handleDefault}>
+          Reset
+        </button>
       </div>
-      <div className={styles.inputGroup}>
-        <label>Please Select the Second Color</label>
-        <input
-          type="color"
-          name="color2"
-          className={styles.inputColor}
-          value={color2}
-          onChange={handleInputChange}
-        />
+
+      <div className={styles.codeEditor}>
+        <p className={styles.title}>background</p>
+        <p className={styles.cssInfo}>
+          : linear-gradient({color1},{color2});{' '}
+        </p>
       </div>
-      <button className={styles.button} onClick={handleDefault}>
-        Reset
-      </button>
     </div>
   );
 }
