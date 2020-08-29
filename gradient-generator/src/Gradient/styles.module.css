@@ -60,6 +60,12 @@ span {
   margin-left: 10px;
 }
 
+.degree {
+  margin-left: 20px;
+  width: 80px;
+  height: 30px;
+}
+
 .button {
   padding: 12px 40px;
   border-radius: 6px;

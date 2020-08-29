@@ -5,28 +5,34 @@ export default function Gradient() {
   //default color
   const [color1, setColor1] = useState('#6ad294');
   const [color2, setColor2] = useState('#8675e6');
+  const [deg, setDeg] = useState(75);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    console.log(e);
     if (name === 'color1') {
       setColor1(value);
     }
     if (name === 'color2') {
       setColor2(value);
     }
+    if (name === 'angle') {
+      setDeg(value);
+    }
   };
 
   const handleDefault = () => {
     setColor1('#6ad294');
     setColor2('#8675e6');
+    setDeg(75);
   };
   return (
     <div className={styles.container}>
       <h2>CSS Gradient</h2>
       <div
         className={styles.display}
-        style={{ background: `linear-gradient(75deg, ${color1}, ${color2})` }}
+        style={{
+          background: `linear-gradient(${deg}deg, ${color1}, ${color2})`,
+        }}
       ></div>
       <div className={styles.wrap}>
         <div className={styles.inputGroup}>
@@ -51,6 +57,17 @@ export default function Gradient() {
           />
           <span>{color2}</span>
         </div>
+        <div>
+          <label>Angle</label>
+          <input
+            className={styles.degree}
+            type="text"
+            name="angle"
+            value={deg}
+            onChange={handleInputChange}
+          />
+        </div>
+
         <button className={styles.button} onClick={handleDefault}>
           Reset
         </button>
@@ -59,7 +76,7 @@ export default function Gradient() {
       <div className={styles.codeEditor}>
         <p className={styles.title}>background</p>
         <p className={styles.cssInfo}>
-          : linear-gradient({color1},{color2});{' '}
+          : linear-gradient({deg}deg, {color1}, {color2});
         </p>
       </div>
     </div>
