@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  width: 600px;
+  height: 600px;
+  display: grid;
+  margin: 0 auto;
+}
+
+ul {
+  padding: 0;
+}
